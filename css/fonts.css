@@ -1,4 +1,9 @@
-/* Self-hosted fonts (latin subset) so the site renders identically offline */
+/* ==========================================================================
+   css/fonts.css - self-hosted @font-face rules (latin subset)
+   - Loaded first on every page, before css/styles.css.
+   - Files live in assets/fonts/, so the site renders identically offline.
+   - Families: DM Sans (body), JetBrains Mono (labels), Big Shoulders Display (headlines).
+   ========================================================================== */
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;

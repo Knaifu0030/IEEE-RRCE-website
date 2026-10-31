@@ -15,32 +15,43 @@
 
   <!-- ===== Header: co-branded lockup (IEEE | RRCE) ===== -->
   <header class="header">
-    <div class="container header__inner">
+    <div class="header__bar">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle menu">
+        <span class="nav-toggle__lines" aria-hidden="true"><i></i><i></i></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
       <a class="lockup" href="index.html" aria-label="IEEE RRCE, home">
         <img class="lockup__ieee" src="assets/brand/ieee-logo.svg" alt="IEEE" width="46" height="26">
         <span class="lockup__divider" aria-hidden="true"></span>
         <img class="lockup__rrce" src="assets/brand/rrce-logo.png" alt="RajaRajeswari College of Engineering" width="133" height="34">
-        <span class="lockup__text">Student Branch<br>Bangalore Section</span>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav" aria-label="Primary">
-        <a class="nav__link" href="index.html">Home</a>
-        <a class="nav__link" href="about.html">About</a>
-        <a class="nav__link" href="events.html">Events</a>
-        <a class="nav__link" href="join.html">Join</a>
-        <a class="nav__link" href="contact.html">Contact</a>
-        <a class="btn btn--gold btn--sm" href="join.html">Become a member</a>
-      </nav>
+      <a class="btn btn--gold btn--sm header__cta" href="join.html">Become a member</a>
     </div>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <div class="container nav__inner">
+        <div class="nav__links">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="events.html">Events</a>
+          <a class="nav__link" href="join.html">Join</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+        </div>
+        <div class="nav__aside">
+          <img class="nav__mark" src="assets/brand/ieee-rrce-lockup.webp" alt="IEEE Bangalore Section, Student Branch Chapter IEEE RRCE" width="929" height="529">
+          <p class="nav__aside-title">IEEE Student Branch</p>
+          <p>RajaRajeswari College of Engineering<br>Kumbalgodu, Mysore Road, Bengaluru 560 074</p>
+          <p><a href="mailto:enquiry@rrce.org">enquiry@rrce.org</a></p>
+          <p><a href="https://www.instagram.com/ieeerrce" target="_blank" rel="noopener">Instagram: @ieeerrce</a></p>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <div class="rail" aria-hidden="true"><span class="rail__marker"></span></div>
 
   <main id="main">
     <!-- ===== Page hero ===== -->
-    <section class="page-hero blueprint" aria-labelledby="page-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
         <h1 id="page-title" data-split>Talk to <span class="serif accent-gold">the branch.</span></h1>
@@ -53,7 +64,7 @@
       <div class="container">
         <div class="split split--top">
           <div data-reveal>
-            <h2 id="reach-title">Where to <span class="serif accent-ieee">find us.</span></h2>
+            <h2 data-split id="reach-title">Where to <span class="serif accent-ieee">find us.</span></h2>
             <ul class="contact-list">
               <li>
                 <div class="card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -96,7 +107,7 @@
           </div>
 
           <div data-reveal>
-            <h2 id="form-title">Send a <span class="serif accent-gold">message.</span></h2>
+            <h2 data-split id="form-title">Send a <span class="serif accent-gold">message.</span></h2>
             <form class="form" data-validate data-ref-prefix="IEEE-RRCE-MSG" aria-labelledby="form-title">
               <div class="field">
                 <label for="name">Your name *</label>
@@ -141,15 +152,15 @@
     </section>
 
     <!-- ===== Visit us ===== -->
-    <section class="section is-light is-paper-2 blueprint" aria-labelledby="visit-title">
+    <section class="section is-light is-paper-2" aria-labelledby="visit-title">
       <div class="container">
         <div class="split">
           <div class="img-frame parallax" data-reveal>
-            <img src="assets/img/lab-detail.webp" alt="Macro view of a printed circuit board beside an oscilloscope trace, lit in navy and gold" width="1600" height="1200" loading="lazy">
+            <img src="assets/img/corridor.webp" alt="Sunlit corridor of an engineering college" width="1600" height="1200" loading="lazy">
             <span class="img-frame__caption">Kumbalgodu, Mysore Road</span>
           </div>
           <div data-reveal>
-            <h2 id="visit-title">On campus, <span class="serif accent-ieee">off Mysore Road.</span></h2>
+            <h2 data-split id="visit-title">On campus, <span class="serif accent-ieee">off Mysore Road.</span></h2>
             <p class="muted">The college sits at Ramohalli Cross in Kumbalgodu, on the Bengaluru to Mysuru highway, about 20 km from the city centre. Buses on the Mysore Road corridor stop at Kumbalgodu; the campus is a short walk from the cross.</p>
             <p class="muted">For admissions and general enquiries the college office answers on the landline, <a href="tel:+918028437375">+91 80 2843 7375</a>, and on the mobile numbers <a href="tel:+919008845678">90088 45678</a> and <a href="tel:+919900058214">99000 58214</a>.</p>
             <h3>IEEE TechFest venues</h3>
@@ -167,8 +178,8 @@
     <section class="section cta-band" aria-labelledby="cta-title">
       <div class="container" data-reveal>
         <div>
-          <h2 id="cta-title">Ready to join the network?</h2>
-          <p class="lead">Student membership is open to every department at RRCE.</p>
+          <h2 data-split id="cta-title">Ready to join the network?</h2>
+          <p class="lead" data-split>Student membership is open to every department at RRCE.</p>
         </div>
         <a class="btn btn--gold" href="join.html">Become a member <span class="arrow">→</span></a>
       </div>
@@ -180,11 +191,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="lockup" href="index.html" aria-label="IEEE RRCE, home">
-            <img class="lockup__ieee" src="assets/brand/ieee-logo.svg" alt="IEEE" width="46" height="26">
-            <span class="lockup__divider" aria-hidden="true"></span>
-            <img class="lockup__rrce" src="assets/brand/rrce-logo.png" alt="RajaRajeswari College of Engineering" width="133" height="34">
-          </a>
+          <img class="footer__mark" src="assets/brand/ieee-rrce-lockup.webp" alt="IEEE Bangalore Section, Student Branch Chapter IEEE RRCE" width="929" height="529">
           <p>IEEE Student Branch at RajaRajeswari College of Engineering, Bengaluru. Part of the IEEE Bangalore Section, Region 10 (Asia Pacific).</p>
         </div>
         <div>

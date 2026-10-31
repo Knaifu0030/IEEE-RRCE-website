@@ -9,39 +9,50 @@
   <link rel="icon" type="image/svg+xml" href="assets/brand/ieee-logo.svg">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/pages/events.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ===== Header: co-branded lockup (IEEE | RRCE) ===== -->
   <header class="header">
-    <div class="container header__inner">
+    <div class="header__bar">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle menu">
+        <span class="nav-toggle__lines" aria-hidden="true"><i></i><i></i></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
       <a class="lockup" href="index.html" aria-label="IEEE RRCE, home">
         <img class="lockup__ieee" src="assets/brand/ieee-logo.svg" alt="IEEE" width="46" height="26">
         <span class="lockup__divider" aria-hidden="true"></span>
         <img class="lockup__rrce" src="assets/brand/rrce-logo.png" alt="RajaRajeswari College of Engineering" width="133" height="34">
-        <span class="lockup__text">Student Branch<br>Bangalore Section</span>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav" aria-label="Primary">
-        <a class="nav__link" href="index.html">Home</a>
-        <a class="nav__link" href="about.html">About</a>
-        <a class="nav__link" href="events.html">Events</a>
-        <a class="nav__link" href="join.html">Join</a>
-        <a class="nav__link" href="contact.html">Contact</a>
-        <a class="btn btn--gold btn--sm" href="join.html">Become a member</a>
-      </nav>
+      <a class="btn btn--gold btn--sm header__cta" href="join.html">Become a member</a>
     </div>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <div class="container nav__inner">
+        <div class="nav__links">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="events.html">Events</a>
+          <a class="nav__link" href="join.html">Join</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+        </div>
+        <div class="nav__aside">
+          <img class="nav__mark" src="assets/brand/ieee-rrce-lockup.webp" alt="IEEE Bangalore Section, Student Branch Chapter IEEE RRCE" width="929" height="529">
+          <p class="nav__aside-title">IEEE Student Branch</p>
+          <p>RajaRajeswari College of Engineering<br>Kumbalgodu, Mysore Road, Bengaluru 560 074</p>
+          <p><a href="mailto:enquiry@rrce.org">enquiry@rrce.org</a></p>
+          <p><a href="https://www.instagram.com/ieeerrce" target="_blank" rel="noopener">Instagram: @ieeerrce</a></p>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <div class="rail" aria-hidden="true"><span class="rail__marker"></span></div>
 
   <main id="main">
     <!-- ===== Page hero ===== -->
-    <section class="page-hero blueprint" aria-labelledby="page-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Events</span>
@@ -57,10 +68,10 @@
     </section>
 
     <!-- ===== Featured: IEEE TechFest 2026 + today's schedule ===== -->
-    <section class="section is-dark blueprint" aria-labelledby="featured-title">
+    <section class="section is-dark" aria-labelledby="featured-title">
       <div class="container">
         <div class="section-head" data-reveal>
-          <h2 id="featured-title">IEEE TechFest 2026, <span class="serif accent-gold">as part of IEEE Day.</span></h2>
+          <h2 data-split id="featured-title">IEEE TechFest 2026, <span class="serif accent-gold">as part of IEEE Day.</span></h2>
         </div>
         <div class="featured" data-reveal-stagger>
           <article class="card card--gold featured__card" data-tilt>
@@ -113,15 +124,14 @@
           </div>
         </div>
       </div>
-      <div class="curve" aria-hidden="true"></div>
     </section>
 
     <!-- ===== All events with filters ===== -->
     <section class="section is-light" id="competitions" aria-labelledby="all-title">
       <div class="container">
         <div class="section-head" data-reveal>
-          <h2 id="all-title">Talks, competitions <span class="serif accent-ieee">and open doors.</span></h2>
-          <p class="lead">Filter by type. Dated events can be added to your calendar; opportunities link to the IEEE programme pages.</p>
+          <h2 data-split id="all-title">Talks, competitions <span class="serif accent-ieee">and open doors.</span></h2>
+          <p class="lead" data-split>Filter by type. Dated events can be added to your calendar; opportunities link to the IEEE programme pages.</p>
         </div>
         <div class="tabs" role="group" aria-label="Filter events">
           <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -236,7 +246,7 @@
     <section class="section cta-band" aria-labelledby="cta-title">
       <div class="container" data-reveal>
         <div>
-          <h2 id="cta-title">Want to run the next one?</h2>
+          <h2 data-split id="cta-title">Want to run the next one?</h2>
           <p class="lead">Join the branch and apply for a committee role.</p>
         </div>
         <a class="btn btn--gold" href="join.html">Become a member <span class="arrow">→</span></a>
@@ -249,11 +259,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="lockup" href="index.html" aria-label="IEEE RRCE, home">
-            <img class="lockup__ieee" src="assets/brand/ieee-logo.svg" alt="IEEE" width="46" height="26">
-            <span class="lockup__divider" aria-hidden="true"></span>
-            <img class="lockup__rrce" src="assets/brand/rrce-logo.png" alt="RajaRajeswari College of Engineering" width="133" height="34">
-          </a>
+          <img class="footer__mark" src="assets/brand/ieee-rrce-lockup.webp" alt="IEEE Bangalore Section, Student Branch Chapter IEEE RRCE" width="929" height="529">
           <p>IEEE Student Branch at RajaRajeswari College of Engineering, Bengaluru. Part of the IEEE Bangalore Section, Region 10 (Asia Pacific).</p>
         </div>
         <div>

@@ -1,8 +1,10 @@
 /* ==========================================================================
-   events.js — Events page behaviour
-   - Filter tabs: <button class="tab" data-filter="talks"> filters .event-card[data-tags]
+   js/events.js - Events page behaviour
+   - Loaded only by events.html, after js/main.js.
+   - Filter tabs: <button class="tab" data-filter="talks"> shows cards whose
+     data-tags attribute contains that word; "all" shows everything.
    - Add to calendar: <a data-ics data-title data-start data-end data-location data-desc>
-     builds a real .ics file on the fly (works offline, no server needed)
+     builds a real .ics file in the browser (works offline, no server needed).
    ========================================================================== */
 (function () {
   "use strict";

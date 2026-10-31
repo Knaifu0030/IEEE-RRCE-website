@@ -15,32 +15,43 @@
 
   <!-- ===== Header: co-branded lockup (IEEE | RRCE) ===== -->
   <header class="header">
-    <div class="container header__inner">
+    <div class="header__bar">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle menu">
+        <span class="nav-toggle__lines" aria-hidden="true"><i></i><i></i></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
       <a class="lockup" href="index.html" aria-label="IEEE RRCE, home">
         <img class="lockup__ieee" src="assets/brand/ieee-logo.svg" alt="IEEE" width="46" height="26">
         <span class="lockup__divider" aria-hidden="true"></span>
         <img class="lockup__rrce" src="assets/brand/rrce-logo.png" alt="RajaRajeswari College of Engineering" width="133" height="34">
-        <span class="lockup__text">Student Branch<br>Bangalore Section</span>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav" aria-label="Primary">
-        <a class="nav__link" href="index.html">Home</a>
-        <a class="nav__link" href="about.html">About</a>
-        <a class="nav__link" href="events.html">Events</a>
-        <a class="nav__link" href="join.html">Join</a>
-        <a class="nav__link" href="contact.html">Contact</a>
-        <a class="btn btn--gold btn--sm" href="join.html">Become a member</a>
-      </nav>
+      <a class="btn btn--gold btn--sm header__cta" href="join.html">Become a member</a>
     </div>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <div class="container nav__inner">
+        <div class="nav__links">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="events.html">Events</a>
+          <a class="nav__link" href="join.html">Join</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+        </div>
+        <div class="nav__aside">
+          <img class="nav__mark" src="assets/brand/ieee-rrce-lockup.webp" alt="IEEE Bangalore Section, Student Branch Chapter IEEE RRCE" width="929" height="529">
+          <p class="nav__aside-title">IEEE Student Branch</p>
+          <p>RajaRajeswari College of Engineering<br>Kumbalgodu, Mysore Road, Bengaluru 560 074</p>
+          <p><a href="mailto:enquiry@rrce.org">enquiry@rrce.org</a></p>
+          <p><a href="https://www.instagram.com/ieeerrce" target="_blank" rel="noopener">Instagram: @ieeerrce</a></p>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <div class="rail" aria-hidden="true"><span class="rail__marker"></span></div>
 
   <main id="main">
     <!-- ===== Page hero ===== -->
-    <section class="page-hero blueprint" aria-labelledby="page-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Join</span></nav>
         <h1 id="page-title" data-split>Become a <span class="serif accent-gold">member.</span></h1>
@@ -52,8 +63,8 @@
     <section class="section is-light" aria-labelledby="paths-title">
       <div class="container">
         <div class="section-head" data-reveal>
-          <h2 id="paths-title">Global membership. <span class="serif accent-ieee">Local branch.</span></h2>
-          <p class="lead">IEEE membership is held with IEEE directly. Branch membership is how we count you, contact you and sign you up for events here.</p>
+          <h2 data-split id="paths-title">Global membership. <span class="serif accent-ieee">Local branch.</span></h2>
+          <p class="lead" data-split>IEEE membership is held with IEEE directly. Branch membership is how we count you, contact you and sign you up for events here.</p>
         </div>
         <div class="grid grid--2" data-reveal-stagger>
           <article class="card card--ieee" data-tilt>
@@ -81,10 +92,10 @@
     </section>
 
     <!-- ===== What you get ===== -->
-    <section class="section is-light is-paper-2 blueprint" aria-labelledby="benefits-title">
+    <section class="section is-light is-paper-2" aria-labelledby="benefits-title">
       <div class="container">
         <div class="section-head" data-reveal>
-          <h2 id="benefits-title">Four things a membership <span class="serif accent-gold">changes.</span></h2>
+          <h2 data-split id="benefits-title">Four things a membership <span class="serif accent-gold">changes.</span></h2>
         </div>
         <div class="grid grid--4" data-reveal-stagger>
           <article class="card" data-tilt>
@@ -115,7 +126,7 @@
     <section class="section is-light" id="apply" aria-labelledby="apply-title">
       <div class="container container--narrow">
         <div class="section-head" data-reveal>
-          <h2 id="apply-title">Apply to <span class="serif accent-ieee">IEEE RRCE.</span></h2>
+          <h2 data-split id="apply-title">Apply to <span class="serif accent-ieee">IEEE RRCE.</span></h2>
           <p class="lead">Takes about two minutes. Fields marked with an asterisk are required.</p>
         </div>
         <div data-reveal>
@@ -223,10 +234,10 @@
     </section>
 
     <!-- ===== Executive committee ===== -->
-    <section class="section is-dark blueprint" id="execom" aria-labelledby="execom-title">
+    <section class="section is-dark" id="execom" aria-labelledby="execom-title">
       <div class="container">
         <div class="section-head" data-reveal>
-          <h2 id="execom-title">Applications <span class="serif accent-gold">open.</span></h2>
+          <h2 data-split id="execom-title">Applications <span class="serif accent-gold">open.</span></h2>
           <p class="lead">Roles are for IEEE student members and are selected with the Branch Counsellor. Apply via the form above and mention the role in your message.</p>
         </div>
         <div class="grid grid--3" data-reveal-stagger>
@@ -263,14 +274,13 @@
         </div>
         <p class="mt-2" data-reveal><a class="link-arrow" href="#apply">Apply via the form and mention the role in your message <span class="arrow">→</span></a></p>
       </div>
-      <div class="curve" aria-hidden="true"></div>
     </section>
 
     <!-- ===== FAQ ===== -->
     <section class="section is-light" aria-labelledby="faq-title">
       <div class="container container--narrow">
         <div class="section-head" data-reveal>
-          <h2 id="faq-title">Questions we get <span class="serif accent-ieee">every semester.</span></h2>
+          <h2 data-split id="faq-title">Questions we get <span class="serif accent-ieee">every semester.</span></h2>
         </div>
         <div class="accordion" data-reveal>
           <details>
@@ -301,7 +311,7 @@
     <section class="section cta-band" aria-labelledby="cta-title">
       <div class="container" data-reveal>
         <div>
-          <h2 id="cta-title">Talk to the branch first.</h2>
+          <h2 data-split id="cta-title">Talk to the branch first.</h2>
           <p class="lead">Not sure which society fits, or whether to apply for a role? Ask us.</p>
         </div>
         <a class="btn btn--gold" href="contact.html">Contact us <span class="arrow">→</span></a>
@@ -314,11 +324,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="lockup" href="index.html" aria-label="IEEE RRCE, home">
-            <img class="lockup__ieee" src="assets/brand/ieee-logo.svg" alt="IEEE" width="46" height="26">
-            <span class="lockup__divider" aria-hidden="true"></span>
-            <img class="lockup__rrce" src="assets/brand/rrce-logo.png" alt="RajaRajeswari College of Engineering" width="133" height="34">
-          </a>
+          <img class="footer__mark" src="assets/brand/ieee-rrce-lockup.webp" alt="IEEE Bangalore Section, Student Branch Chapter IEEE RRCE" width="929" height="529">
           <p>IEEE Student Branch at RajaRajeswari College of Engineering, Bengaluru. Part of the IEEE Bangalore Section, Region 10 (Asia Pacific).</p>
         </div>
         <div>

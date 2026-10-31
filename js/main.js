@@ -59,7 +59,6 @@
     toggle.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
     nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
-    window.addEventListener("resize", () => { if (isDesktop()) setOpen(false); });
   }
 
   // Mark the current page in the nav
@@ -70,7 +69,7 @@
   });
 
   /* ---------- 3. Scroll reveals ---------- */
-  const revealEls = document.querySelectorAll("[data-reveal], [data-reveal-stagger]");
+  const revealEls = document.querySelectorAll("[data-reveal], [data-reveal-stagger], h2[data-split]");
   if ("IntersectionObserver" in window && !reduceMotion) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
@@ -205,6 +204,14 @@
     };
     build();
     let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { build(); ScrollTrigger.refresh(); }, 200); });
+  }
+
+  /* ---------- 13b. Hero cut-outs drift at different speeds as the page scrolls ---------- */
+  if (hasGsap && window.ScrollTrigger && !reduceMotion && document.querySelector(".hero__visual")) {
+    gsap.registerPlugin(ScrollTrigger);
+    const drift = { trigger: ".hero", start: "top top", end: "bottom top", scrub: true };
+    gsap.to(".parallax-slow", { y: -70, ease: "none", scrollTrigger: drift });
+    gsap.to(".parallax-fast", { y: -160, ease: "none", scrollTrigger: drift });
   }
 
   /* ---------- 14. Timeline fill line ---------- */

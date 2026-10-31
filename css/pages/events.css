@@ -1,4 +1,8 @@
-/* events.css — page-scoped additions for events.html (loaded after styles.css) */
+/* ==========================================================================
+   css/pages/events.css - styles used only by events.html
+   - Loaded after css/styles.css (the design system) and only on that page.
+   - Featured TechFest layout, speaker list, rules list and card actions.
+   ========================================================================== */
 .featured { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
 @media (min-width: 1000px) { .featured { grid-template-columns: 1.15fr 0.85fr; } }
 

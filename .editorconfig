@@ -1,0 +1,20 @@
+# Editor settings shared by everyone who opens this project.
+# Most editors read this file automatically (VS Code needs the EditorConfig extension).
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[js/vendor/*]
+indent_style = unset
+indent_size = unset
+trim_trailing_whitespace = false
+insert_final_newline = false

@@ -1,49 +1,42 @@
-# IEEE RRCE — Student Branch Website
+# IEEE RRCE
 
-Website for the **IEEE Student Branch at RajaRajeswari College of Engineering, Bengaluru** (IEEE Bangalore Section, Region 10).
-Built for the Web Designing competition at IEEE TechFest 2026 (31 October 2026).
+Website for the **IEEE Student Branch at RajaRajeswari College of Engineering, Bengaluru** (IEEE Bangalore Section, Region 10). Built for the Web Designing competition at IEEE TechFest 2026.
 
 ## Run it
 
-No build step and no server required. Open `index.html` in a browser, or serve the folder with any static server (e.g. VS Code Live Server).
-Everything, including fonts, images and animation libraries, is inside this folder, so the site works fully offline.
+Open `index.html` in a browser. That is all. No build step, no install, no internet needed: fonts, images and scripts are inside this folder.
+
+For live reload while editing, use the VS Code "Live Server" extension.
+
+## What is inside
+
+```text
+index.html, about.html, events.html, join.html, contact.html   the five pages
+css/styles.css        the design system (colours, type, every shared component)
+css/pages/            styles that only one page needs
+css/fonts.css         self-hosted font declarations
+js/main.js            behaviour shared by every page
+js/events.js          event filters and calendar export
+js/forms.js           form validation
+js/vendor/            gsap, ScrollTrigger, lenis (local copies)
+assets/               logos, images, fonts
+docs/                 guides for anyone working on the site
+```
+
+## Documentation
+
+Start with `docs/STRUCTURE.md`.
+
+- `docs/STRUCTURE.md`: every file and folder, and when to open it
+- `docs/DESIGN-SYSTEM.md`: colours, fonts, spacing, components
+- `docs/HOW-TO.md`: recipes for common changes
+- `docs/ACCESSIBILITY.md`: what the site does for all users and how to keep it
+- `docs/CONTENT-SOURCES.md`: where every fact came from
+
+## Content rule
+
+All names, dates, venues and figures come from `rrce.org`, the IEEE TechFest 2026 announcement and poster, and `ieee.org`. No people or events were invented. The student committee is shown as "applications open".
 
 ## Stack
 
-- **HTML5** with semantic landmarks (`header`, `nav`, `main`, `section`, `article`, `footer`), one `h1` per page, labelled forms.
-- **CSS** in a single design-system stylesheet (`css/styles.css`) built on custom properties. Mobile-first, fluid type with `clamp()`, `grid auto-fit` layouts. Progressive enhancements for Chromium: cross-document View Transitions and scroll-driven parallax.
-- **JavaScript** (no framework). Hand-written modules plus two vendored libraries for scroll choreography.
-
-## Structure
-
-```
-index.html          Home: hero network, live TechFest strip, two voices, pinned speaker strip, membership, people
-about.html          IEEE, RRCE, the branch, counsellor & speakers, interleaved timeline
-events.html         TechFest 2026 featured + today's schedule, filterable event cards, .ics export
-join.html           Two membership paths, application form, Execom roles, FAQ
-contact.html        Address & socials, contact form, visit us
-css/styles.css      Design tokens → base → components → page sections → motion → responsive/a11y
-css/fonts.css       Self-hosted @font-face rules
-js/main.js          Shared behaviour: nav, reveals, counters, word-split, live status, rail, pinned strip
-js/events.js        Filter tabs + Add-to-calendar (.ics generated in the browser)
-js/forms.js         Accessible validation + success state with reference number
-js/vendor/          gsap, ScrollTrigger, lenis (local copies, MIT)
-assets/brand/       IEEE master brand (SVG) and RRCE emblem (PNG)
-assets/img/         Generated backdrops (WebP)
-assets/fonts/       Big Shoulders Display, DM Sans, JetBrains Mono (woff2)
-```
-
-## Design concept
-
-The site gives IEEE and RRCE equal weight. Navy (shared by RRCE's identity and the TechFest poster) is the single page theme; **IEEE blue** and **RRCE gold** are co-equal accents. One condensed poster typeface for headlines, a neutral sans for reading, mono for data. Flat hairline layout, sharp corners throughout, real photography in the hero.
-
-## Accessibility & resilience
-
-- Skip link, visible focus states, `aria-current`, `aria-expanded` nav toggle, `aria-live` form errors, descriptive alt text.
-- Content is never hidden by CSS alone: reveal states only apply when `html.js` is present.
-- `prefers-reduced-motion` disables the cursor, rail, canvas motion and reveals.
-- Event status badges and the schedule's "now" marker are computed from the visitor's clock (IST timestamps).
-
-## Content sources
-
-All names, dates, venues and figures come from rrce.org, the IEEE TechFest 2026 announcement and poster, and ieee.org. No people or events were invented; the student committee is shown as "applications open".
+HTML5, CSS and JavaScript only. Two small vendored libraries (GSAP with ScrollTrigger, Lenis) handle scroll choreography. Everything else is hand-written and commented.

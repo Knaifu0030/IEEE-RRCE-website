@@ -1,9 +1,12 @@
 /* ==========================================================================
-   forms.js — accessible client-side validation for <form data-validate>
+   js/forms.js - accessible client-side validation for <form data-validate>
+   - Loaded by join.html and contact.html, after js/main.js.
    - Each .field has an input and a .field__error element (aria-live) for messages.
+   - Rules are picked by the input's data-rule attribute (name, usn, email, phone, message).
    - On success: hides the form, shows .form__success with a reference number,
      and keeps a copy in localStorage so the user can see it again.
-   - No backend is required (competition build); swap `submit()` for a fetch() later.
+   - No backend is required (competition build). To send data to a server later,
+     replace the localStorage block inside the submit handler with a fetch() call.
    ========================================================================== */
 (function () {
   "use strict";
