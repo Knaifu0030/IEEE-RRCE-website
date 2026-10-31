@@ -14,7 +14,7 @@ All colours are CSS custom properties on `:root`.
 |---|---|---|
 | `--paper` | `#f4f1ea` | The page background. |
 | `--paper-2` | `#ebe6da` | A darker step for alternating sections (`.is-paper-2`). |
-| `--white` | `#ffffff` | Feature sections (`.section.is-dark`), inputs, cards on hover, the live strip. |
+| `--white` | `#ffffff` | Feature sections (`.section.is-dark`), inputs, cards on hover. |
 | `--navy` | `#0a1628` | The menu, the footer, the CTA band, the success card, `.card--navy`. |
 | `--navy-2` | `#0f2140` | Image placeholders. |
 | `--navy-3` | `#16305c` | Gradients and avatar backgrounds. |
@@ -112,10 +112,8 @@ Do not mix. A rounded card or a square button breaks the system.
 | `.field` | Label + input + error message. | Add `.field--check` for a checkbox row, `.field--fieldset` for a group of chips. |
 | `.chip` | A checkbox that looks like a pill tag. | Used for "interests". |
 | `.form__success` | The navy card shown after a valid submit. | `data-ref` and `data-name` are filled by `assets/js/forms.js`. |
-| `.hstrip` | Horizontal strip of cards. | Pinned and scrolled sideways on desktop by GSAP; native swipe on mobile. |
 | `.timeline` | Vertical timeline with a line that fills as you scroll. | Items are `.timeline__item`; add `--rrce` for gold dots. |
 | `.schedule` / `.slot` | Today's programme. | Give each `.slot` `data-start` and `data-end` (ISO time with `+05:30`) and the current one is highlighted. |
-| `.live-strip` | The white bar under the hero showing event status. | |
 | `.cta-band` | Full-width navy call to action with the circuit backdrop. | |
 | `.img-frame` | Framed photo with a cut edge. | Add `.img-frame--wide` for 21:9, `.parallax` for a gentle scroll drift, `.img-frame__caption` for a small label. |
 | `.rail` | The thin scroll-progress ruler on the left. | Hidden on small screens. |

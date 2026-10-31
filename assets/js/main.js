@@ -2,8 +2,8 @@
    main.js — shared behaviour for every page
    - Progressive enhancement: everything here is optional; content reads without it.
    - Modules: smooth scroll, header/nav, reveals, counters, word-split, live status,
-     progress rail, magnetic buttons, marquee, pinned horizontal strip,
-     timeline fill, schedule "now" marker.
+     progress rail, magnetic buttons, hero parallax, timeline fill,
+     schedule "now" marker.
    ========================================================================== */
 (function () {
   "use strict";
@@ -13,7 +13,6 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  const isDesktop = () => window.innerWidth > 900;
   const hasGsap = typeof window.gsap !== "undefined";
 
   /* ---------- 1. Smooth scroll (Lenis) + GSAP ticker ---------- */
@@ -186,27 +185,7 @@
     track.innerHTML += track.innerHTML;
   });
 
-  /* ---------- 13. Pinned horizontal strip (GSAP ScrollTrigger, desktop only) ---------- */
-  const strip = document.querySelector(".hstrip");
-  if (strip && hasGsap && window.ScrollTrigger && !reduceMotion) {
-    gsap.registerPlugin(ScrollTrigger);
-    const track = strip.querySelector(".hstrip__track");
-    const build = () => {
-      ScrollTrigger.getAll().filter((t) => t.vars.id === "hstrip").forEach((t) => t.kill());
-      gsap.set(track, { x: 0 });
-      if (!isDesktop()) return;
-      const distance = track.scrollWidth - window.innerWidth;
-      if (distance <= 0) return;
-      gsap.to(track, {
-        x: -distance, ease: "none",
-        scrollTrigger: { id: "hstrip", trigger: strip.closest("section") || strip, start: "top top", end: "+=" + distance, pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true }
-      });
-    };
-    build();
-    let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { build(); ScrollTrigger.refresh(); }, 200); });
-  }
-
-  /* ---------- 13b. Hero cut-outs drift at different speeds as the page scrolls ---------- */
+  /* ---------- 13. Hero cut-outs drift at different speeds as the page scrolls ---------- */
   if (hasGsap && window.ScrollTrigger && !reduceMotion && document.querySelector(".hero__visual")) {
     gsap.registerPlugin(ScrollTrigger);
     const drift = { trigger: ".hero", start: "top top", end: "bottom top", scrub: true };

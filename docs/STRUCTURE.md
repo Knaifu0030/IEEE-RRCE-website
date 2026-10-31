@@ -76,7 +76,7 @@ Because of this, paths differ by location:
 | `assets/css/styles.css` | The design system. Numbered sections: tokens, reset, typography, layout, header, footer, buttons, cards, forms, page sections, motion, responsive. | Change a colour, font, spacing or any shared component. |
 | `assets/css/pages/` | Small stylesheets that only one page loads, after `styles.css`. | Style something that exists on one page only. |
 | `assets/css/fonts.css` | Tells the browser where the font files are. | Add or remove a font. |
-| `assets/js/main.js` | Everything shared: menu toggle, scroll reveals, number counters, headline word reveal, live event status, progress rail, magnetic buttons, pinned speaker strip, hero cut-out drift, timeline line, schedule "now" marker. | Change how the site moves or behaves on every page. |
+| `assets/js/main.js` | Everything shared: menu toggle, scroll reveals, number counters, headline word reveal, live event status, progress rail, magnetic buttons, hero cut-out drift, timeline line, schedule "now" marker. | Change how the site moves or behaves on every page. |
 | `assets/js/events.js` | Filter tabs and the `.ics` calendar download. | Change filtering or the calendar export. |
 | `assets/js/forms.js` | Validation rules, error messages, the success card with a reference number. | Change a rule, a message, or connect a backend. |
 | `assets/js/vendor/` | Third-party libraries, copied locally so the site works offline. Do not edit these. | Upgrade a library (replace the file). |

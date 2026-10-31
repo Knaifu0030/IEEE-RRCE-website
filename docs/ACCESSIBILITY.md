@@ -20,7 +20,7 @@ The site is built so that people using a keyboard, a screen reader, a small scre
 
 **Alt text.** Every `<img>` has an `alt`. Decorative images use `alt=""`; meaningful ones describe what is in the picture. Logos say what they are ("IEEE", "RajaRajeswari College of Engineering").
 
-**Reduced motion.** If the visitor's system asks for less motion, `@media (prefers-reduced-motion: reduce)` in `assets/css/styles.css` switches off animations and transitions (including the blur-in headlines), and `assets/js/main.js` checks the same setting before starting smooth scroll, reveals, counters, the hero drift and the pinned strip. The content is simply shown.
+**Reduced motion.** If the visitor's system asks for less motion, `@media (prefers-reduced-motion: reduce)` in `assets/css/styles.css` switches off animations and transitions (including the blur-in headlines), and `assets/js/main.js` checks the same setting before starting smooth scroll, reveals, counters, and the hero drift. The content is simply shown.
 
 **Works without JavaScript.** Reveal animations only hide elements when the `<html>` tag has the `js` class, which `assets/js/main.js` adds. If scripts fail to load, nothing is hidden.
 

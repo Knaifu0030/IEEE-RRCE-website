@@ -38,7 +38,7 @@ Open `pages/events.html` and find the `<div class="grid grid--3"` inside the "Al
 
 The site works out whether an event is live, upcoming or finished from the visitor's clock. Three places carry the date:
 
-1. `index.html` and `pages/events.html`: the badge
+1. `pages/events.html`: the badge (it appears twice, in the page header and on the featured card)
    `<span class="badge" data-event-status data-start="2026-10-31T09:00:00+05:30" data-end="2026-10-31T16:00:00+05:30">`
 2. `pages/events.html`: each schedule row
    `<div class="slot" data-start="..." data-end="...">`
@@ -120,9 +120,9 @@ fetch("https://your-server.example/apply", {
 
 Services like Formspree or Google Forms also work: they give you a URL to post to.
 
-## Add a speaker to the home strip
+## Add a speaker
 
-In `index.html`, find `<div class="hstrip__track">` and copy one `<article class="card">`. The strip scrolls sideways on desktop automatically.
+Speakers live in two places: `pages/about.html` (the "Speakers and mentors" grid) and `pages/events.html` (one talk card each). Copy an existing `<article class="card person">` in About and an event card in Events, then change the name, role and text.
 
 ## Check your work
 
