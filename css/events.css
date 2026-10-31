@@ -1,0 +1,21 @@
+/* events.css — page-scoped additions for events.html (loaded after styles.css) */
+.featured { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+@media (min-width: 1000px) { .featured { grid-template-columns: 1.15fr 0.85fr; } }
+
+.featured__card h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.featured__speakers { display: grid; gap: 0.5rem; margin: 1.25rem 0 1.5rem; }
+.featured__speakers li { position: relative; padding-left: 1.2rem; font-size: 0.95rem; color: var(--muted-on-dark); }
+.featured__speakers li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.featured__speakers strong { color: var(--text-on-dark); font-weight: 600; }
+
+.schedule__note { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--muted-on-dark); margin-top: 1rem; }
+
+.rules { display: grid; gap: 0.45rem; margin: 0.9rem 0 1.1rem; font-size: 0.92rem; }
+.rules li { display: flex; gap: 0.6rem; align-items: flex-start; }
+.rules li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 0.55em; border-radius: 50%; background: var(--gold); }
+
+.card__meta--after-badge { margin-top: 0.9rem; }
+
+.card__actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; margin-top: 1rem; }
+.card--event { display: flex; flex-direction: column; }
+.card--event .card__actions { margin-top: auto; padding-top: 1rem; }
