@@ -24,19 +24,18 @@ join.html           Two membership paths, application form, Execom roles, FAQ
 contact.html        Address & socials, contact form, visit us
 css/styles.css      Design tokens → base → components → page sections → motion → responsive/a11y
 css/fonts.css       Self-hosted @font-face rules
-js/main.js          Shared behaviour: nav, reveals, counters, word-split, live status, rail, cursor, tilt, pinned strip
-js/hero.js          Canvas "Two Signals, One Network" (IEEE blue + RRCE gold nodes)
+js/main.js          Shared behaviour: nav, reveals, counters, word-split, live status, rail, pinned strip
 js/events.js        Filter tabs + Add-to-calendar (.ics generated in the browser)
 js/forms.js         Accessible validation + success state with reference number
 js/vendor/          gsap, ScrollTrigger, lenis (local copies, MIT)
 assets/brand/       IEEE master brand (SVG) and RRCE emblem (PNG)
 assets/img/         Generated backdrops (WebP)
-assets/fonts/       Bricolage Grotesque, DM Sans, Instrument Serif, JetBrains Mono (woff2)
+assets/fonts/       Big Shoulders Display, DM Sans, JetBrains Mono (woff2)
 ```
 
-## Design concept: "Two Signals, One Network"
+## Design concept
 
-The site gives IEEE and RRCE equal weight. Navy (shared by RRCE's identity and the TechFest poster) is the ground; **IEEE blue** and **RRCE gold** are co-equal accents. Headings use a geometric sans (the technology voice), taglines use a serif italic (the academic voice). The hero network has blue and gold nodes that link into one mesh, which is the branch.
+The site gives IEEE and RRCE equal weight. Navy (shared by RRCE's identity and the TechFest poster) is the single page theme; **IEEE blue** and **RRCE gold** are co-equal accents. One condensed poster typeface for headlines, a neutral sans for reading, mono for data. Flat hairline layout, sharp corners throughout, real photography in the hero.
 
 ## Accessibility & resilience
 

@@ -2,8 +2,8 @@
    main.js — shared behaviour for every page
    - Progressive enhancement: everything here is optional; content reads without it.
    - Modules: smooth scroll, header/nav, reveals, counters, word-split, live status,
-     progress rail, custom cursor, magnetic buttons, card spotlight/tilt,
-     marquee, pinned horizontal strip, timeline fill, schedule "now" marker.
+     progress rail, magnetic buttons, marquee, pinned horizontal strip,
+     timeline fill, schedule "now" marker.
    ========================================================================== */
 (function () {
   "use strict";
@@ -170,25 +170,7 @@
     onScroll();
   }
 
-  /* ---------- 9. Custom cursor (desktop only) ---------- */
-  if (finePointer && !reduceMotion) {
-    const cursor = document.createElement("div");
-    cursor.className = "cursor";
-    cursor.innerHTML = '<div class="cursor__dot"></div><div class="cursor__ring"></div>';
-    document.body.appendChild(cursor);
-    let tx = -100, ty = -100, x = -100, y = -100;
-    window.addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-    const loop = () => {
-      x += (tx - x) * 0.18; y += (ty - y) * 0.18;
-      cursor.style.transform = "translate3d(" + x + "px," + y + "px,0)";
-      requestAnimationFrame(loop);
-    };
-    loop();
-    const hoverables = "a, button, .card, input, select, textarea, summary, label";
-    document.addEventListener("mouseover", (e) => cursor.classList.toggle("is-hover", !!e.target.closest(hoverables)));
-  }
-
-  /* ---------- 10. Magnetic buttons ---------- */
+  /* ---------- 9. Magnetic buttons ---------- */
   if (finePointer && !reduceMotion) {
     document.querySelectorAll(".btn").forEach((btn) => {
       btn.addEventListener("mousemove", (e) => {
@@ -200,23 +182,7 @@
     });
   }
 
-  /* ---------- 11. Card spotlight + 3D tilt ---------- */
-  if (finePointer && !reduceMotion) {
-    document.querySelectorAll(".card").forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
-        card.style.setProperty("--mx", px * 100 + "%");
-        card.style.setProperty("--my", py * 100 + "%");
-        if (card.hasAttribute("data-tilt")) {
-          card.style.transform = "perspective(900px) rotateX(" + ((0.5 - py) * 6) + "deg) rotateY(" + ((px - 0.5) * 8) + "deg) translateY(-4px)";
-        }
-      });
-      card.addEventListener("mouseleave", () => { card.style.transform = ""; });
-    });
-  }
-
-  /* ---------- 12. Marquee: duplicate content once for a seamless loop ---------- */
+  /* ---------- 10. Marquee: duplicate content once for a seamless loop ---------- */
   document.querySelectorAll(".marquee__track").forEach((track) => {
     track.innerHTML += track.innerHTML;
   });
