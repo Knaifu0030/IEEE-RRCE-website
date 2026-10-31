@@ -2,6 +2,8 @@
 
 Short recipes for common changes. You only need a text editor and a browser.
 
+A note on paths before you start: `index.html` sits at the root, the other pages sit in `pages/`. So a file in `pages/` reaches shared files with `../` (for example `../assets/css/styles.css` and `../index.html`), while `index.html` uses `assets/...` and `pages/...`. When you copy markup between the two, check the paths.
+
 ## Run the site
 
 **Option A, no tools:** double-click `index.html`. Everything works, including the forms and the calendar download.
@@ -10,7 +12,7 @@ Short recipes for common changes. You only need a text editor and a browser.
 
 ## Add an event card
 
-Open `events.html` and find the `<div class="grid grid--3"` inside the "All events" section. Copy one `<article>` and edit it:
+Open `pages/events.html` and find the `<div class="grid grid--3"` inside the "All events" section. Copy one `<article>` and edit it:
 
 ```html
 <article class="card" data-tags="today talks" data-reveal>
@@ -36,27 +38,30 @@ Open `events.html` and find the `<div class="grid grid--3"` inside the "All even
 
 The site works out whether an event is live, upcoming or finished from the visitor's clock. Three places carry the date:
 
-1. `index.html` and `events.html`: the badge
+1. `index.html` and `pages/events.html`: the badge
    `<span class="badge" data-event-status data-start="2026-10-31T09:00:00+05:30" data-end="2026-10-31T16:00:00+05:30">`
-2. `events.html`: each schedule row
+2. `pages/events.html`: each schedule row
    `<div class="slot" data-start="..." data-end="...">`
-3. `events.html`: the `data-ics` links
+3. `pages/events.html`: the `data-ics` links
 
 Change the dates in all three and the badges, the "now" marker and the calendar files follow.
 
 ## Add a page
 
-1. Copy `contact.html` and rename it, for example `gallery.html`.
+1. Copy a file from `pages/`, for example `pages/contact.html`, and rename the copy, for example `pages/gallery.html`. Keep it inside `pages/` so its `../` paths keep working.
 2. Change the `<title>` and the `<meta name="description">`.
 3. Replace everything between `<main id="main">` and `</main>`. Keep one `<h1>`.
-4. Add a link to the new page in the menu of **every** page. The menu is the `<nav class="nav">` block inside `<header>`. The script marks the current page automatically.
-5. Also add it to the "Explore" list in the footer of every page.
-6. If the page needs its own styles, create `css/pages/gallery.css` and link it after `css/styles.css`.
-7. If it needs its own script, create `js/gallery.js` and load it after `js/main.js`.
+4. Add a link to the new page in the menu of **every** page. The menu is the `<div class="nav__links">` block inside `<nav class="nav">`:
+   - in the files inside `pages/`, the link is `href="gallery.html"`;
+   - in `index.html`, the link is `href="pages/gallery.html"`.
+   The script marks the current page automatically.
+5. Also add it to the "Explore" list in the footer of every page, with the same two path styles.
+6. If the page needs its own styles, create `assets/css/pages/gallery.css` and link it after `styles.css` (from inside `pages/` the href is `../assets/css/pages/gallery.css`).
+7. If it needs its own script, create `assets/js/gallery.js` and load it after `main.js`.
 
 ## Change a colour
 
-Open `css/styles.css`, go to section **1. DESIGN TOKENS**, and edit the value. For example, to make the gold a little warmer:
+Open `assets/css/styles.css`, go to section **1. DESIGN TOKENS**, and edit the value. For example, to make the gold a little warmer:
 
 ```css
 --gold: #f0b000;
@@ -64,13 +69,19 @@ Open `css/styles.css`, go to section **1. DESIGN TOKENS**, and edit the value. F
 
 Every button, badge and highlight that uses gold updates at once. Do not search-and-replace hex codes elsewhere; they should all come from the tokens.
 
+Two gold tokens exist on purpose: `--gold` for fills and borders, `--gold-ink` for gold **text** on the paper background (plain gold is too light to read there). See `DESIGN-SYSTEM.md`.
+
 ## Replace an image
 
 1. Save the new picture in `assets/img/`. Use `.webp` if you can (smaller files); 1600 to 2000 pixels wide is plenty.
-2. In the HTML, change the `src` and write a useful `alt` sentence describing the picture.
+2. In the HTML, change the `src` and write a useful `alt` sentence describing the picture. Remember the `../` prefix inside `pages/`.
 3. Keep the `width` and `height` attributes close to the real size so the page does not jump while loading.
 
-Logos live in `assets/brand/`. If you replace `rrce-logo.png`, keep the transparent background: the header and footer are dark.
+Logos live in `assets/brand/`:
+
+- `ieee-logo.svg` is the IEEE mark. CSS turns it white on navy surfaces.
+- `rrce-emblem.png` is the RRCE emblem on a transparent background, used in the header on the light bar.
+- `ieee-rrce-lockup.webp` is the branch's own lockup, shown in the menu and the footer. To update it, export the newest version from the branch's Instagram profile and replace the file, keeping the name.
 
 ## Change a form field
 
@@ -85,16 +96,16 @@ Each field follows the same shape:
 ```
 
 - `required` makes it mandatory.
-- `data-rule` picks a validation rule from `js/forms.js`: `name`, `usn`, `email`, `phone` or `message`. Leave it out for free text.
+- `data-rule` picks a validation rule from `assets/js/forms.js`: `name`, `usn`, `email`, `phone` or `message`. Leave it out for free text.
 - The `for` and `id` must match, so screen readers read the label.
 
-Messages are at the top of `js/forms.js` in the `RULES` object.
+Messages are at the top of `assets/js/forms.js` in the `RULES` object.
 
 ## Connect the forms to a real backend
 
 Right now a valid submission is saved in the browser's `localStorage` and a reference number is shown. To send it somewhere:
 
-1. Open `js/forms.js` and find the comment `// Collect data` inside the submit handler.
+1. Open `assets/js/forms.js` and find the comment `// Collect data` inside the submit handler.
 2. The `data` object already holds every field. Replace the `localStorage.setItem(...)` line with a request, for example:
 
 ```js
@@ -115,4 +126,4 @@ In `index.html`, find `<div class="hstrip__track">` and copy one `<article class
 
 ## Check your work
 
-Open the page at three widths (narrow phone, tablet, desktop) and make sure nothing overflows sideways. Press Tab through the page: every link and button should show a gold focus ring. Open the browser console (F12): it should be empty of errors.
+Open the page at three widths (narrow phone, tablet, desktop) and make sure nothing overflows sideways. Open the menu at each width. Press Tab through the page: every link and button should show a gold focus ring. Open the browser console (F12): it should be empty of errors.

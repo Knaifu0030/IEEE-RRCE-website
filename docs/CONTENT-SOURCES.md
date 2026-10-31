@@ -4,7 +4,7 @@ Every name, date, venue and number on the site comes from a public source. Nothi
 
 ## The rule
 
-**No invented people, events or figures.** If a fact cannot be sourced, the page says so instead of guessing. The student Executive Committee is shown as "applications open" because its members are not published anywhere. The schedule on `events.html` is labelled "indicative" because only the start and end times of TechFest are published.
+**No invented people, events or figures.** If a fact cannot be sourced, the page says so instead of guessing. The student Executive Committee is shown as "applications open" because its members are not published anywhere. The schedule on `pages/events.html` is labelled "indicative" because only the start and end times of TechFest are published.
 
 ## Sources
 
@@ -32,12 +32,13 @@ Every name, date, venue and number on the site comes from a public source. Nothi
 | Asset | Source |
 |---|---|
 | `assets/brand/ieee-logo.svg` | IEEE master brand (public SVG) |
-| `assets/brand/rrce-logo.png` | The college's own logo file from `rrce.org` |
+| `assets/brand/rrce-emblem.png` | The emblem cropped from the college's own logo file on `rrce.org` |
+| `assets/brand/ieee-rrce-lockup.webp` | The branch's lockup from its Instagram profile (`instagram.com/ieeerrce`), upscaled for sharpness without redrawing |
 | `assets/img/*.webp` | Generated backdrops and photographs made for this site. They are atmospheric, not photographs of RRCE itself. |
 
 ## Draft copy
 
-The branch's Vision and Mission on `about.html` and the short descriptions under each speaker were written for this site, in line with the published taglines. They are copy, not facts, and can be replaced by the branch's official wording.
+The branch's Vision and Mission on `pages/about.html` and the short descriptions under each speaker were written for this site, in line with the published taglines. They are copy, not facts, and can be replaced by the branch's official wording.
 
 ## Updating
 

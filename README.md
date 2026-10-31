@@ -11,16 +11,17 @@ For live reload while editing, use the VS Code "Live Server" extension.
 ## What is inside
 
 ```text
-index.html, about.html, events.html, join.html, contact.html   the five pages
-css/styles.css        the design system (colours, type, every shared component)
-css/pages/            styles that only one page needs
-css/fonts.css         self-hosted font declarations
-js/main.js            behaviour shared by every page
-js/events.js          event filters and calendar export
-js/forms.js           form validation
-js/vendor/            gsap, ScrollTrigger, lenis (local copies)
-assets/               logos, images, fonts
-docs/                 guides for anyone working on the site
+index.html                 the home page (kept at the root so it can be double-clicked)
+pages/                     about, events, join and contact pages
+assets/css/styles.css      the design system (colours, type, every shared component)
+assets/css/pages/          styles that only one page needs
+assets/css/fonts.css       self-hosted font declarations
+assets/js/main.js          behaviour shared by every page
+assets/js/events.js        event filters and calendar export
+assets/js/forms.js         form validation
+assets/js/vendor/          gsap, ScrollTrigger, lenis (local copies)
+assets/brand, img, fonts   logos, pictures, font files
+docs/                      guides for anyone working on the site, plus the competition brief
 ```
 
 ## Documentation
@@ -32,6 +33,7 @@ Start with `docs/STRUCTURE.md`.
 - `docs/HOW-TO.md`: recipes for common changes
 - `docs/ACCESSIBILITY.md`: what the site does for all users and how to keep it
 - `docs/CONTENT-SOURCES.md`: where every fact came from
+- `docs/Guidelines.pdf`: the competition brief and rubric
 
 ## Content rule
 
