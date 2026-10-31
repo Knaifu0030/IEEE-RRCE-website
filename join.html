@@ -62,12 +62,12 @@
             <div class="card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
             <p class="person__role">Path one</p>
             <h3>Join IEEE (global)</h3>
-            <ol class="stack" style="list-style: decimal inside; color: var(--muted-on-light);">
+            <ol class="stack list-decimal muted">
               <li>Create an IEEE account at ieee.org/join.</li>
               <li>Choose Student membership and select RajaRajeswari College of Engineering as your institution.</li>
               <li>Add society memberships such as the Computer Society or Women in Engineering if you want them.</li>
             </ol>
-            <p class="muted" style="margin-top:1rem">Dues are set by IEEE and vary by region and year. The current amount is shown at checkout on ieee.org.</p>
+            <p class="muted mt-1">Dues are set by IEEE and vary by region and year. The current amount is shown at checkout on ieee.org.</p>
             <a class="btn btn--primary" href="https://www.ieee.org/membership/join/" target="_blank" rel="noopener">Join on ieee.org <span class="arrow">→</span></a>
           </article>
           <article class="card card--gold" data-tilt>
@@ -186,8 +186,8 @@
                 <p class="field__error" aria-live="polite"></p>
               </div>
             </div>
-            <fieldset class="field" style="border:0;padding:0;margin:0">
-              <legend class="mono" style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-on-light);margin-bottom:0.4rem">Interests</legend>
+            <fieldset class="field field--fieldset">
+              <legend>Interests</legend>
               <div class="checks">
                 <label class="chip"><input type="checkbox" name="interests" value="Web & software"><span>Web &amp; software</span></label>
                 <label class="chip"><input type="checkbox" name="interests" value="AI & ML"><span>AI &amp; ML</span></label>
@@ -204,9 +204,9 @@
               <textarea id="message" name="message" placeholder="Interested in an executive committee role? Mention it here."></textarea>
               <p class="field__error" aria-live="polite"></p>
             </div>
-            <div class="field">
-              <label for="consent" style="display:flex;gap:0.6rem;align-items:flex-start;text-transform:none;letter-spacing:0;font-family:var(--font-body);font-size:0.95rem;color:var(--text-on-light)">
-                <input id="consent" name="consent" type="checkbox" value="yes" required style="width:auto;margin-top:0.25rem">
+            <div class="field field--check">
+              <label for="consent">
+                <input id="consent" name="consent" type="checkbox" value="yes" required>
                 <span>I'm a student at RRCE and agree to be contacted about branch activities. *</span>
               </label>
               <p class="field__error" aria-live="polite"></p>
@@ -267,7 +267,7 @@
             <p class="muted">Own one event each, from the proposal to the report: workshops, talks, competitions.</p>
           </article>
         </div>
-        <p data-reveal style="margin-top:2rem"><a class="link-arrow" href="#apply">Apply via the form and mention the role in your message <span class="arrow">→</span></a></p>
+        <p class="mt-2" data-reveal><a class="link-arrow" href="#apply">Apply via the form and mention the role in your message <span class="arrow">→</span></a></p>
       </div>
       <div class="curve" aria-hidden="true"></div>
     </section>

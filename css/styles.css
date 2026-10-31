@@ -155,6 +155,13 @@ h4 { font-size: 1.1rem; }
 .flex { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 .stack > * + * { margin-top: 1rem; }
 .center { text-align: center; }
+.section-head.center .lead { margin-inline: auto; }
+.split--top { align-items: start; }
+.section--flush-bottom { padding-bottom: 0; }
+.spacer { height: var(--section-y); }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.list-decimal { list-style: decimal inside; }
 
 /* Blueprint grid backdrop */
 .blueprint::before {
@@ -356,6 +363,10 @@ h4 { font-size: 1.1rem; }
 .card:hover .card__media img { transform: scale(1.05); }
 .card--gold { border-color: rgba(242, 183, 5, 0.45); }
 .card--ieee { border-color: rgba(0, 98, 155, 0.35); }
+.card .badge + h3 { margin-top: 1rem; }
+.card--navy { display: grid; place-items: center; text-align: center; background: var(--navy); color: var(--text-on-dark); border-color: var(--navy); color-scheme: dark; }
+.card--navy .eyebrow { justify-content: center; color: var(--cyan); }
+.card--navy .btn { margin-top: 1rem; }
 
 /* Person card */
 .person { text-align: left; }
@@ -413,6 +424,10 @@ h4 { font-size: 1.1rem; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--ieee); box-shadow: 0 0 0 4px rgba(0, 98, 155, 0.15); }
 .field [aria-invalid="true"] { border-color: var(--maroon); box-shadow: 0 0 0 4px rgba(139, 30, 45, 0.12); }
 .field__error { font-size: 0.82rem; color: var(--maroon); min-height: 1.2em; }
+.field--fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.field--fieldset legend { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-on-light); margin-bottom: 0.4rem; padding: 0; }
+.field--check label { display: flex; gap: 0.6rem; align-items: flex-start; text-transform: none; letter-spacing: 0; font-family: var(--font-body); font-size: 0.95rem; color: var(--text-on-light); }
+.field--check input { width: auto; margin-top: 0.25rem; }
 .checks { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chip { position: relative; }
 .chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
